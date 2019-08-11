@@ -1,0 +1,14 @@
+input[type='file'] {
+    color: transparent;    /* Hides your "No File Selected" */
+    direction: rtl;        /* Sets the Control to Right-To-Left */
+    margin-left: -42px;
+  }
+  .image{
+    background-position: center center;
+    background: #fff;
+    width: 12em;
+    height: 11.5em;
+    border-radius: 4%;
+    object-fit: contain;
+    orientation:landscape;
+}

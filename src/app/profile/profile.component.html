@@ -1,0 +1,97 @@
+<!--<div class="row">
+  <div class="col-sm-10 offset-sm-1">
+    <div class="card">
+      <div class="card-title">
+        <img [src]="user.photoURL"  style="width:120px; height:120px" class="imgcss">
+         <div class="display-4">
+            {{user.displayName}}
+        </div> 
+
+      </div>
+      <div class="card-body">
+          Bio:{{user.bio}} <br>
+          Interest:{{user.interests}} <br>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card text-body">
+  <div class="card-body">
+    <div class="card-title">
+      <h3>posts by {{user.displayName}} ({{posts.length}}) </h3>
+    </div>
+    <div class="class-text">
+     <app-post *ngFor = "let post of posts" [post]="post" ></app-post>
+    </div>
+  </div>
+</div> -->
+<div class="container">
+  <h1>Edit Profile</h1>
+  <hr>
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-3">
+      <div class="text-center">
+  <img [src]="user.photoURL" class="shadow image" alt="avatar">  <hr>
+  <mat-progress-bar class="mb-2" mode="indeterminate" *ngIf="(something == 'appear')" width="70%" ></mat-progress-bar>
+
+  <input type="file" (change)="featuredPhotoSelected($event) " /> 
+ 
+  
+  <div class="input-group">
+    <input class="form-control" [(ngModel)]="displayName" 
+    [ngModelOptions]="{standalone: true}" type="text" value="{{user.displayName}}">
+    <div class="input-group-append">
+      <span class="input-group-text"><i class="fas fa-pen"></i></span>
+    </div>
+  </div>
+  <hr>
+   </div>
+    </div>
+    
+    <!-- edit form column -->
+    <div [hidden] class="col-md-9 personal-info">
+      <div class="alert alert-info alert-dismissable">
+        <a class="panel-close close" data-dismiss="alert">×</a> 
+        <i class="fa fa-coffee"></i>
+        This is an <strong>.alert</strong>. Use this to show important messages to the user.
+      </div>
+      <h3>Personal info</h3>
+      
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Bio:</label>
+          <div class="col-lg-8">
+            <input class="form-control" [(ngModel)]="bio"
+            [ngModelOptions]="{standalone: true}"  type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Hobbies:</label>
+          <div class="col-lg-8">
+            <input class="form-control" placeholder="Eg. Reading, Travelling, Gaming" [(ngModel)]="hoobies"
+            [ngModelOptions]="{standalone: true}"  type="text" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Email:</label>
+          <div class="col-lg-8">
+            <input class="form-control" [(ngModel)]="email"
+            [ngModelOptions]="{standalone: true}" type="email" value="{{user.email}}">
+          </div>
+        </div>
+        <!--save changes-->
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+            <input type="submit" class="btn btn-primary" (click)="updateInfo()" value="Save Changes">
+            <span></span>
+            <input type="reset" class="btn btn-default" value="Cancel">
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+</div>
+<hr>

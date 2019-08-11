@@ -1,0 +1,18 @@
+
+<div class="container mt-3 mb-3">
+<div class="card text-blank shadow-lg">
+  <div class="ml-3">
+    <div class="h2" style="margin-top:2%;">
+     {{post.title}}
+    </div>
+
+    <div class="">
+     <img src={{postImage}}  height="350px">
+    </div>
+    <div class="">
+      <app-comment [postId]="postId" ></app-comment>
+    </div>
+  </div>    
+</div>
+</div>
+<hr>

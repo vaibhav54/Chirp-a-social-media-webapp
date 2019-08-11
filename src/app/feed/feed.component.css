@@ -1,0 +1,14 @@
+
+#profileview{
+    margin-left:25px;
+    margin-top:25px;
+    
+}
+.himg{
+    background-position: center center;
+    object-fit: contain;
+    background: #fff;
+    width: 12em;
+    height: 11.5em;
+    border-radius: 4%;
+}

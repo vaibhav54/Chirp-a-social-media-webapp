@@ -1,0 +1,18 @@
+p{
+    font-family: "menco";
+    font-size: 26px;
+}
+button:hover{
+    color:red;
+    text-decoration: underline;
+}
+.name{
+    font-family: "montserrat";
+    background-color: white;
+    font-size: 26px;
+    color: #212529;
+
+}
+.posty:hover {
+    opacity: 0.8;
+}

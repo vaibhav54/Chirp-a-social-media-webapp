@@ -1,0 +1,22 @@
+<div class="container"> 
+  <div class="card text-blank" >
+  <div class="card-body">
+    <div class="card-title">
+        <a mat-raised-button style="text-decoration: none; font-size: 25px;"
+         routerLink="/view-profile/{{postData.owner}}">{{displayName}}</a> 
+      <p> {{postData.title}}</p>
+    </div>
+<img  class="posty" src={{postImage}} routerLink="/view/{{postId}}" height="350px" alt="allllt">
+    <div class="mt-2"> 
+      posted on {{postData.created.toDate() | date: 'MM dd, yyyy' }}
+      <button style="float:right;" type="button" class="btn card-link" 
+      *ngIf="(newUser == owner)" (click) ="onDelete()" >Delete</button> 
+    </div>
+    <div class="mt-2 mb-2">
+      <a routerLink="/view/{{postId}}">View all {{comments.length}} Comments
+      </a>
+    </div>
+   </div>
+  </div>
+</div>
+<hr>  

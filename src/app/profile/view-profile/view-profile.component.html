@@ -1,0 +1,38 @@
+<div class="content-profile-page shadow">
+    <div class="profile-user-page card">
+       <div class="img-user-profile">
+         <img class="profile-bgHome" src="https://37.media.tumblr.com/88cbce9265c55a70a753beb0d6ecc2cd/tumblr_n8gxzn78qH1st5lhmo1_1280.jpg" />
+         <img class="avatar" [src]="user.photoURL" alt="jofpin"/>
+            </div>
+           <button>Follow</button>
+           <div class="user-profile-data">
+             <h1>{{user.displayName}}</h1>
+            <br>
+           </div> 
+           <div class="description-profile">
+          <span><i class="fas fa-edit"></i></span> Bio:<a *ngIf="(bio == null)" routerLink="/profile/{{id}}"> Add bio to your profile</a> <span *ngIf="(bio != null)">{{bio}}</span>
+              <br> <span><i class="fas fa-snowboarding"></i></span> Hobby:<a *ngIf="(hobby == null)" 
+                 routerLink="/profile/{{id}}"> Add your hobby to your profile</a> <span *ngIf="(hobby != null)" >{{hobby}}</span> <br> <br>   
+        </div>
+        <ul class="data-user">
+          <li><a routerLink="/profile/{{id}}"><span>Edit Profile</span></a></li>
+          <li><button style=
+            "width: 33%;
+            height: 11%;
+            margin-left: -116px;
+            margin-top: 1px;" 
+            (click)="clicked()"> 
+            <span *ngIf="(tempVar != 'clicked')">Show</span> 
+            <span *ngIf="(tempVar == 'clicked')">Collapse</span> 
+            all {{displayName}}'s posts</button></li>
+         <li><a><span>39 Posts</span></a></li>
+
+        </ul> <br>
+       </div>
+     </div>
+ 
+ <footer>
+  <div *ngIf="(tempVar == 'clicked')">
+  <app-post *ngFor="let post of posts" [post]="post" ></app-post>  
+  </div>
+ </footer>

@@ -1,0 +1,41 @@
+<div class="row shadow ml-1 mt-5"  >
+<!---  <div class="form-group shadow">
+    
+  <input type="text" class="form-control "  placeholder="Post Title" 
+  [(ngModel)]="title" >
+
+
+  <div class="form-group shadow">
+    <label for="exampleFormControlTextarea6">Post Your View</label>
+    <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+  </div>
+
+
+  <div class="form-group">
+    <app-ngx-editor [config]="editorConfig" [(ngModel)]="content"></app-ngx-editor>
+    <input type="file" (change)="featuredPhotoSelected($event)"/> <hr> 
+    <button (click)="completeUploading()" class="btn btn-primary">submit</button>
+-->
+<!--    when submit buttonn is clicked,  createPost function retrives the data
+        from text area and submits in the database through object by using 
+        'collections.add' . 
+        and event is set to post the content in another component.
+        event triggers another createpost named function which retrives data from 
+        databse using getpost function
+
+
+-->
+
+<div class="form-group col-8">
+  <label class="mt-2">Post Your View</label>
+  <input id="title" type="text" class="form-control" placeholder="Post Title" [(ngModel)]="title" >
+  <div class="mt-2">
+    <input type="file" (change)="featuredPhotoSelected($event)"/>  
+    <div class="mt-2">
+        <mat-progress-bar class="mb-2" mode="indeterminate" *ngIf="(something == 'appear')" width="70%" ></mat-progress-bar>
+      <button (click)="completeUploading()" class="btn btn-primary">Post</button>
+    </div>    
+  </div>
+</div>  
+</div>
+<hr>

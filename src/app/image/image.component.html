@@ -1,0 +1,23 @@
+<div class="mt-5 shadow  container">
+  <div class="p-3 pb-5 form-group col-8">
+    <label class="mt-2">Post Your View</label>
+    <input id="title" type="text" class="form-control" placeholder="Post Title" [(ngModel)]="title" >
+    <div class="mt-2">
+      <input type="file" (change)="featuredPhotoSelected($event)"/>  
+      <div class="mt-2">
+        <button (click)="UploadImage()" class="btn btn-primary">Post</button>
+      </div> 
+    </div>
+  </div>
+  </div> 
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Favorite food" value="Sushi">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Leave a comment"></textarea>
+    </mat-form-field>
+  </form>
+  

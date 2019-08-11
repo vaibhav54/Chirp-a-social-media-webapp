@@ -1,0 +1,153 @@
+<!---
+<div >
+    <div class="container">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+        <div class="col-sm-10">
+                <div class="display-3" id="signup">SignUp Yourself</div> <br>
+    
+         <div class="form-row " >
+            <div class="form-group col-sm-3" >
+                <input type="text" class="form-control" style="height: 45px; "
+                placeholder="{{firstname}}" 
+                [formControl]="myForm.controls['firstName']" > 
+            </div> 
+    
+            <div class="form-group col-sm-3">
+                <input type="text" class="form-control" style="height: 45px;" 
+                placeholder="last name" 
+                [formControl]="myForm.controls['lastName']">
+            </div>       
+         </div>
+    
+                <div class="alertForm" 
+                *ngIf="(myForm.controls['firstName'].touched || myForm.controls['lastName'].touched) && 
+                        (!myForm.controls['firstName'].valid || !myForm.controls['lastName'].valid) ">
+                    invalid input
+                </div>
+    
+    
+    
+        <div class="form-group col-sm-6">
+            <input type="email" class="form-control sidewrd" placeholder="email"
+            [formControl]="myForm.controls['email']">
+        </div>
+                 <div class="alert alert-danger col-sm-3" 
+                *ngIf="(myForm.controls['email'].invalid && myForm.controls['email'].touched )">
+                email required
+            </div>
+    
+    
+    
+        <div class="form-group col-sm-6 ">
+            <input type="password" class="form-control sidewrd" placeholder="password" 
+            [formControl]="myForm.controls['password']">
+        </div>
+        <div class="form-group col-sm-6">
+            <input type="password" class="form-control sidewrd" placeholder="confirm pass" 
+            [formControl]="myForm.controls['conPass']">
+        </div>
+        <div class="alert alert-danger" 
+        *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched">
+         password should be 8 characters long
+        </div>
+    <div class="row">
+    <button  id="signbutt" type="submit" class="btn btn-primary " [disabled]= "myForm.invalid" 
+    >Submit</button>
+</div>
+    <div class="text-center">
+    <a class="nav-link" 
+    style="color:black; font-size:20px; margin-left:-56%;"
+    routerLink="/login"> Already have an account? LogIn </a>
+    </div>
+    
+    <div class="alert alert-success" *ngIf="(msg.length > 0)">
+           {{msg}}
+    </div>
+    <div class="alert alert-danger"  *ngIf="userError.length > 0">
+    {{userError}}
+    </div>  
+        </div>
+    </form>
+    </div>
+</div>
+-->
+<div class="container-fluid ">
+        <div class="shadow-lg mb-5 rounded" style="width:70%;   
+        background-color:#f0f8ff;  margin: 5% auto;">
+        <div class="row"> <!--making good padding-->
+            <img src="assets/coco.jpg" alt="coco" class="col-5 rounded" height="70%" >
+          <div class="col-7">  
+            <p id="signup" style="text-transform: uppercase; font-weight:400; font-size: 201%;margin: 4%;"
+            >Create your account</p><br>
+              <!--form--->
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="shadow-sm p-3 mb-5 " style="margin:auto; width: 80%; " >
+            <!--name-->
+            <div class="row">
+                <div class="form-group">
+                <input class="ml-3 col-sm-10 form-control" style="float:left" type="text" placeholder="firstname" [formControl]="myForm.controls['firstName']">
+                <div class="alertForm" 
+                *ngIf="(myForm.controls['firstName'].invalid && myForm.controls['firstName'].touched )">
+                required
+                </div>
+            </div>
+                <div class="form-group">
+                <input class="col-sm-10 form-control" style="float:inherit; width:200px;" type="text" placeholder="lastname" [formControl]="myForm.controls['lastName']">
+                <div class="alertForm"
+                *ngIf="(myForm.controls['lastName'].invalid && myForm.controls['lastName'].touched )">
+                required
+                </div>
+            </div>
+            </div>
+    
+        
+
+            <!--email-->
+        <div class="form-group">
+            <input class="form-control" type="email" placeholder="enter valid email" [formControl]="myForm.controls['email']">
+            <div class="alertForm" 
+            *ngIf="(myForm.controls['email'].invalid && myForm.controls['email'].touched )">
+            email required
+        </div>
+        </div>
+        
+
+
+
+            <!--password-->
+        <div class="form-group">
+            <input class="form-control" type="password" placeholder="password" [formControl]="myForm.controls['password']">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" placeholder="Confirm password" [formControl]="myForm.controls['conPass']">
+            <div class="alertForm" 
+            *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched">
+            password should be 8 characters long
+            </div>
+        </div>
+
+        <!--alert-->
+        
+
+        <button id="signbutt" type="submit" 
+        class="btn btn-primary rounded"  [disabled]= "myForm.invalid">Sign up</button>
+    
+    </form>
+        <div class="text-center">
+        <a class="nav-link" 
+        style="color:black; font-size:20px; font-weight: 350;
+        "
+        routerLink="/login"> Already have an account? LogIn </a>
+        </div> 
+        <div class="alert alert-success" *ngIf="(msg.length > 0)">
+        {{msg}}
+        </div>
+        <div class="alert alert-danger"  *ngIf="userError.length > 0">
+        {{userError}}
+        </div> 
+          
+        
+         </div>  </div>
+        </div>
+        </div>   
+
+s

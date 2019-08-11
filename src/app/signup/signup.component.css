@@ -1,0 +1,33 @@
+.sidewrd{
+    margin-left:-15px;
+    height: 45px;
+    width:105%;
+}
+input{
+    background-color: #f0f5f5;
+
+}
+
+#signup{
+    color:black;
+    margin-top:12%;
+
+}
+#signbutt{
+    margin-left: 6%;
+    width: 35%;
+}
+#background-right{
+    background-image: url('/assets/bg.jpg');
+    background-position: 0% 0%;
+    background-size: 1000% 1000%;
+
+}
+.alrt{
+
+}
+.alertForm{
+    color: red;
+    margin-left: 26px;
+
+}
